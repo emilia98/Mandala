@@ -10,4 +10,15 @@ extension UIColor {
     static let meh = UIColor(named: "mehGray")!
     static let sad = UIColor(named: "sadBlue")!
     static let sleepy = UIColor(named: "sleepyLightRed")!
+    
+    static let colors: [ImageResource: UIColor] = [
+        .angry: angry,
+        .confused: confused,
+        .crying: crying,
+        .goofy: goofy,
+        .happy: happy,
+        .meh: meh,
+        .sad: sad,
+        .sleepy: sleepy
+    ]
 }
