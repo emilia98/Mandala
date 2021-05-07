@@ -23,9 +23,9 @@
                                 </connections>
                             </containerView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91d-R9-gEh">
-                                <rect key="frame" x="0.0" y="868" width="428" height="58"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JbI-Gd-hmj">
-                                    <rect key="frame" x="0.0" y="0.0" width="428" height="58"/>
+                                <rect key="frame" x="0.0" y="834" width="428" height="92"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JbI-Gd-hmj">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="92"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEp-Qq-yZE" customClass="ImageSelector" customModule="Mandala" customModuleProvider="target">
@@ -49,7 +49,7 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8y-MQ-pDU">
-                                <rect key="frame" x="107" y="800" width="214" height="48"/>
+                                <rect key="frame" x="107" y="766" width="214" height="48"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="CwH-rI-XaK"/>

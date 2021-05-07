@@ -52,6 +52,8 @@ class ImageSelector: UIControl {
                 
                 return imageButton
             }
+            
+            selectedIndex = 0
         }
     }
     
