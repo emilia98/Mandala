@@ -10,8 +10,16 @@ import UIKit
 class ImageSelector: UIControl {
     private(set) var selectedIndex = 0 {
         didSet {
+            highlightView.backgroundColor = highlightColor(forIndex: selectedIndex)
+            
             let imageButton = imageButtons[selectedIndex]
             highlightViewXConstraint = highlightView.centerXAnchor.constraint(equalTo: imageButton.centerXAnchor)
+        }
+    }
+    
+    var highlightColors: [UIColor] = [] {
+        didSet {
+            highlightView.backgroundColor = highlightColor(forIndex: selectedIndex)
         }
     }
     
@@ -56,7 +64,7 @@ class ImageSelector: UIControl {
     }
     
     private let selectorStackView: UIStackView = {
-       let stackView = UIStackView()
+        let stackView = UIStackView()
         
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -68,13 +76,19 @@ class ImageSelector: UIControl {
     }()
     
     private let highlightView: UIView = {
-       let view = UIView()
-        
-        view.backgroundColor = view.tintColor
+        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()
+    
+    private func highlightColor(forIndex index: Int) -> UIColor {
+        guard index >= 0 && index < highlightColors.count else {
+            return UIColor.blue.withAlphaComponent(0.6)
+        }
+        
+        return highlightColors[index]
+    }
     
     private var highlightViewXConstraint: NSLayoutConstraint! {
         didSet {
@@ -110,7 +124,15 @@ class ImageSelector: UIControl {
     
     @objc
     private func imageButtonTapped(_ sender: UIButton) {
-        selectedIndex = sender.tag
+        let selectionAnimator = UIViewPropertyAnimator(
+            duration: 1,
+            curve: .easeInOut,
+            animations: {
+                self.selectedIndex = sender.tag
+                self.layoutIfNeeded()
+        })
+        selectionAnimator.startAnimation()
+        
         sendActions(for: .valueChanged)
     }
 }
