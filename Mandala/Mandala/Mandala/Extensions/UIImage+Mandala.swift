@@ -1,7 +1,6 @@
-import Foundation
 import UIKit
 
-enum ImageResource: String {
+enum ImageResource: String, CaseIterable {
     case angry
     case confused
     case crying
@@ -14,6 +13,7 @@ enum ImageResource: String {
 
 extension UIImage {
     convenience init(resource: ImageResource) {
+        print(resource.rawValue)
         self.init(named: resource.rawValue)!
     }
 }

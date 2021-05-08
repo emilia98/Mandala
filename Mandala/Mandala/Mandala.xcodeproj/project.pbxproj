@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		840688442637F1EC00DDF1B8 /* UIColor+Mandala.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840688432637F1EC00DDF1B8 /* UIColor+Mandala.swift */; };
 		840688482637F30600DDF1B8 /* UIImage+Mandala.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840688472637F30600DDF1B8 /* UIImage+Mandala.swift */; };
 		840B12672632B2B5001AF265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B12662632B2B5001AF265 /* AppDelegate.swift */; };
 		840B12692632B2B5001AF265 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B12682632B2B5001AF265 /* SceneDelegate.swift */; };
@@ -23,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		840688432637F1EC00DDF1B8 /* UIColor+Mandala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Mandala.swift"; sourceTree = "<group>"; };
 		840688472637F30600DDF1B8 /* UIImage+Mandala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Mandala.swift"; sourceTree = "<group>"; };
 		840B12632632B2B5001AF265 /* Mandala.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mandala.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840B12662632B2B5001AF265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +52,6 @@
 		840688422637F1DD00DDF1B8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				840688432637F1EC00DDF1B8 /* UIColor+Mandala.swift */,
 				840688472637F30600DDF1B8 /* UIImage+Mandala.swift */,
 			);
 			path = Extensions;
@@ -180,7 +177,6 @@
 				840B127F2632B366001AF265 /* MoodEntry.swift in Sources */,
 				84804489263ED1E5002D19BC /* MoodsConfigurable.swift in Sources */,
 				840B12672632B2B5001AF265 /* AppDelegate.swift in Sources */,
-				840688442637F1EC00DDF1B8 /* UIColor+Mandala.swift in Sources */,
 				840688482637F30600DDF1B8 /* UIImage+Mandala.swift in Sources */,
 				8473DF0D2643D8000099EA15 /* ImageSelector.swift in Sources */,
 				840B12692632B2B5001AF265 /* SceneDelegate.swift in Sources */,

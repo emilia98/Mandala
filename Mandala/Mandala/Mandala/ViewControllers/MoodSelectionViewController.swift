@@ -37,15 +37,13 @@ class MoodSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        moods = [.happy, .sad, .angry, .goofy, .crying, .confused, .sleepy, .meh]
+        moods = ImageResource.allCases.map { Mood($0) }
         addMoodButton.layer.cornerRadius = addMoodButton.bounds.height / 2
     }
     
     @IBAction private func moodSelectionChanged(_ sender: ImageSelector) {
-        let selectedIndex = sender.selectedIndex
-        currentMood = moods[selectedIndex]
+        currentMood = moods[sender.selectedIndex]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

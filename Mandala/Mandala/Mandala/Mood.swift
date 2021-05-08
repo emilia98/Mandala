@@ -5,14 +5,16 @@ struct Mood {
     var image: UIImage
     var color: UIColor
     
+    static let colors: [ImageResource: UIColor] = ImageResource.allCases.reduce(into: [:]) {
+        $0[$1] = UIColor(named: $1.rawValue)
+    }
+    
     init(_ resource: ImageResource) {
         self.name = resource.rawValue
         self.image = UIImage(resource: resource)
-        self.color = UIColor.colors[resource]!
+        self.color = Self.colors[resource]!
     }
-}
-
-extension Mood {
+    
     static let angry = Mood(.angry)
     static let confused = Mood(.confused)
     static let crying = Mood(.crying)

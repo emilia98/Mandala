@@ -8,14 +8,8 @@
 import UIKit
 
 class ImageSelector: UIControl {
-    var selectedIndex = 0 {
+    private(set) var selectedIndex = 0 {
         didSet {
-            if selectedIndex < 0 {
-                selectedIndex = 0
-            } else if selectedIndex >= imageButtons.count {
-                selectedIndex = imageButtons.count - 1
-            }
-            
             let imageButton = imageButtons[selectedIndex]
             highlightViewXConstraint = highlightView.centerXAnchor.constraint(equalTo: imageButton.centerXAnchor)
         }
@@ -40,6 +34,8 @@ class ImageSelector: UIControl {
     
     var images: [UIImage] = [] {
         didSet {
+            var buttonId = 0
+            
             imageButtons = images.map { image in
                 let imageButton = UIButton()
                 
@@ -49,6 +45,8 @@ class ImageSelector: UIControl {
                 imageButton.addTarget(self,
                                       action: #selector(imageButtonTapped(_:)),
                                       for: .touchUpInside)
+                imageButton.tag = buttonId
+                buttonId += 1
                 
                 return imageButton
             }
@@ -112,11 +110,7 @@ class ImageSelector: UIControl {
     
     @objc
     private func imageButtonTapped(_ sender: UIButton) {
-        guard let buttonIndex = imageButtons.firstIndex(of: sender) else {
-            preconditionFailure("The buttons and images are not parallel.")
-        }
-        
-        selectedIndex = buttonIndex
+        selectedIndex = sender.tag
         sendActions(for: .valueChanged)
     }
 }
